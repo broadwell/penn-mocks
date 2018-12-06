@@ -1,25 +1,34 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
+// import "./App.css";
+
+import "bulma/css/bulma.min.css";
+import "font-awesome/css/font-awesome.min.css";
+import "./main.css";
+
+import Header from "./Header";
+import ManuscriptForm from "./ManuscriptForm";
+import ScriptChart from "./ScriptChart";
+import Footer from "./Footer";
 
 class App extends Component {
   render() {
     return (
       <div className="App">
         <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
+          <Header />
         </header>
+        <div className={"columns main-content"}>
+          <div className={"column is-one-quarter"}>
+            <div className={"box"}>
+              <h4 className={"title is-4"}>Scriptchart options</h4>
+              <ManuscriptForm />
+            </div>
+          </div>
+          <div className={"column"}>
+            <ScriptChart />
+          </div>
+        </div>
+        <Footer />
       </div>
     );
   }
