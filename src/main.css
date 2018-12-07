@@ -20,6 +20,10 @@ header {
   color: white;
 }
 
+.navbar-dropdown .navbar-item {
+  color: black;
+}
+
 .main-content {
   padding: 20px;
   margin-top: 10px;
