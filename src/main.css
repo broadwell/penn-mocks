@@ -28,7 +28,17 @@ header {
   padding: 20px;
   margin-top: 10px;
   min-height: 80vh;
-  /* flex: 1; */
+}
+
+.top-panel {
+  max-height: 50vh;
+  overflow: scroll;
+  margin-bottom: 10px;
+}
+
+.bottom-panel {
+  max-height: 50vh;
+  overflow: scroll;
 }
 
 .control {
