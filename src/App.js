@@ -7,9 +7,10 @@ import "./main.css";
 
 import Header from "./Header";
 import ManuscriptForm from "./ManuscriptForm";
-import ScriptChart from "./ScriptChart";
+// import ScriptChart from "./ScriptChart";
 import Footer from "./Footer";
-import MiradorContainer from "./MiradorContainer";
+// import MiradorContainer from "./MiradorContainer";
+import MiradorTabbed from "./MiradorTabbed";
 
 class App extends Component {
   render() {
@@ -25,13 +26,16 @@ class App extends Component {
               <ManuscriptForm />
             </div>
           </div>
-          <div className={"column"}>
+          {/* <div className={"column"}>
             <div className={"top-panel"}>
               <ScriptChart />
             </div>
             <div className={"bottom-pannel"}>
               <MiradorContainer />
             </div>
+          </div> */}
+          <div className={"column"}>
+            <MiradorTabbed />
           </div>
         </div>
         <Footer />
