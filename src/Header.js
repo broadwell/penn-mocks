@@ -21,6 +21,9 @@ const Header = () => {
             <div className={"navbar-dropdown"}>
               <a className={"navbar-item"} href={"."}>
                 Participants
+              </a>{" "}
+              <a className={"navbar-item"} href={"."}>
+                Publications
               </a>
             </div>
           </div>
@@ -28,10 +31,7 @@ const Header = () => {
             Results
           </a>
           <a className={"navbar-item"} href=".">
-            Participants
-          </a>
-          <a className={"navbar-item"} href=".">
-            Contact Us
+            Contact
           </a>
         </div>
         <div className={"navbar-end"}>
