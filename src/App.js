@@ -12,6 +12,9 @@ import Footer from "./Footer";
 // import MiradorContainer from "./MiradorContainer";
 import MiradorTabbed from "./MiradorTabbed";
 
+import HTML5Backend from 'react-dnd-html5-backend'
+import { DragDropContext } from 'react-dnd'
+
 class App extends Component {
   render() {
     return (
@@ -26,14 +29,6 @@ class App extends Component {
               <ManuscriptForm />
             </div>
           </div>
-          {/* <div className={"column"}>
-            <div className={"top-panel"}>
-              <ScriptChart />
-            </div>
-            <div className={"bottom-pannel"}>
-              <MiradorContainer />
-            </div>
-          </div> */}
           <div className={"column"}>
             <MiradorTabbed />
           </div>
@@ -44,4 +39,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default DragDropContext(HTML5Backend)(App);
