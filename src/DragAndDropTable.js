@@ -7,34 +7,53 @@ import * as Table from 'reactabular-table';
 import * as dnd from 'reactabular-dnd';
 import * as resolve from 'table-resolver';
 
-import sample from "./images/sample-letter.png";
-import sample2 from "./images/sample-letter2.png";
-import sample3 from "./images/sample-letter3.png";
+import eastern_alap from "./images/Syriac_Eastern_alap.png"
+import eastern_bet from "./images/Syriac_Eastern_bet.png"
+import eastern_gamal from "./images/Syriac_Eastern_gamal.png"
+import estrangela_alap from "./images/Syriac_Estrangela_alap.png"
+import estrangela_bet from "./images/Syriac_Estrangela_bet.png"
+import estrangela_gamal from "./images/Syriac_Estrangela_gamal.png"
+import serta_alap from "./images/Syriac_Serta_alap.png"
+import serta_bet from "./images/Syriac_Serta_bet.png"
+import serta_gamal from "./images/Syriac_Serta_gamal.png"
+
+//import sample from "./images/sample-letter.png";
+//import sample2 from "./images/sample-letter2.png";
+//import sample3 from "./images/sample-letter3.png";
 
 import './DragAndDropTable.css';
  
 const rows = [
   {
     id: 1,
-    letter: "Letter 1",
-    manuscript1: <img src={sample} alt={"sample letter"} />, 
-    manuscript2: <img src={sample2} alt={"sample letter2"} />, 
-    manuscript3: <img src={sample3} alt={"sample letter3"} />
+    letter: "ʾĀlep̄",
+    manuscript1: <img src={eastern_alap} alt={"sample letter"} />, 
+    manuscript2: <img src={estrangela_alap} alt={"sample letter2"} />, 
+    manuscript3: <img src={serta_alap} alt={"sample letter3"} />,
+    manuscript4: <img src={eastern_alap} alt={"sample letter"} />, 
+    manuscript5: <img src={estrangela_alap} alt={"sample letter2"} />, 
+    manuscript6: <img src={serta_alap} alt={"sample letter3"} />
   },
   {
     id: 2,
-    letter: "Letter 2",
-    manuscript1: <img src={sample} alt={"sample letter"} />, 
-    manuscript2: <img src={sample2} alt={"sample letter2"} />, 
-    manuscript3: <img src={sample3} alt={"sample letter3"} />
+    letter: "Bēṯ",
+    manuscript1: <img src={eastern_bet} alt={"sample letter"} />, 
+    manuscript2: <img src={estrangela_bet} alt={"sample letter2"} />, 
+    manuscript3: <img src={serta_bet} alt={"sample letter3"} />,
+    manuscript4: <img src={eastern_bet} alt={"sample letter"} />, 
+    manuscript5: <img src={estrangela_bet} alt={"sample letter2"} />, 
+    manuscript6: <img src={serta_bet} alt={"sample letter3"} />
   },
   {
     id: 3,
-    letter: "Letter 3",
-    manuscript1: <img src={sample} alt={"sample letter"} />, 
-    manuscript2: <img src={sample2} alt={"sample letter2"} />, 
-    manuscript3: <img src={sample3} alt={"sample letter3"} />
-  },
+    letter: "Gāmal",
+    manuscript1: <img src={eastern_gamal} alt={"sample letter"} />, 
+    manuscript2: <img src={estrangela_gamal} alt={"sample letter2"} />, 
+    manuscript3: <img src={serta_gamal} alt={"sample letter3"} />,
+    manuscript4: <img src={eastern_gamal} alt={"sample letter"} />, 
+    manuscript5: <img src={estrangela_gamal} alt={"sample letter2"} />, 
+    manuscript6: <img src={serta_gamal} alt={"sample letter3"} />
+  }
 ];
  
 class DragAndDropTable extends React.Component {
@@ -48,7 +67,7 @@ class DragAndDropTable extends React.Component {
           props: {
             label: 'Letter',
             style: {
-              width: 200,
+              width: 120,
               fontWeight: "bold"
             }
           },
@@ -64,7 +83,7 @@ class DragAndDropTable extends React.Component {
           props: {
             label: 'Manuscript A',
             style: {
-              width: 200
+              width: 120
             }
           },
           header: {
@@ -78,7 +97,7 @@ class DragAndDropTable extends React.Component {
           property: 'manuscript2',
           props: {
             style: {
-              width: 200
+              width: 120
             }
           },
           header: {
@@ -93,13 +112,58 @@ class DragAndDropTable extends React.Component {
           property: 'manuscript3',
           props: {
             style: {
-              width: 200
+              width: 120
             }
           },
           header: {
             label: 'Manuscript C',
             props: {
               label: 'Manuscript C',
+              onMove: o => this.onMoveColumn(o)
+            }
+          }
+        },
+        {
+          property: 'manuscript4',
+          props: {
+            style: {
+              width: 120
+            }
+          },
+          header: {
+            label: 'Manuscript D', 
+            props: {
+              label: 'Manuscript D',
+              onMove: o => this.onMoveColumn(o)
+            }
+          }
+        },
+        {
+          property: 'manuscript5',
+          props: {
+            style: {
+              width: 120
+            }
+          },
+          header: {
+            label: 'Manuscript E',
+            props: {
+              label: 'Manuscript E',
+              onMove: o => this.onMoveColumn(o)
+            }
+          }
+        },
+        {
+          property: 'manuscript6',
+          props: {
+            style: {
+              width: 120
+            }
+          },
+          header: {
+            label: 'Manuscript F',
+            props: {
+              label: 'Manuscript F',
               onMove: o => this.onMoveColumn(o)
             }
           }
@@ -205,5 +269,3 @@ class DragAndDropTable extends React.Component {
 //<DragAndDropTable />
 
 export default DragAndDropTable;
-
-
