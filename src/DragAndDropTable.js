@@ -10,12 +10,21 @@ import * as resolve from 'table-resolver';
 import eastern_alap from "./images/Syriac_Eastern_alap.png"
 import eastern_bet from "./images/Syriac_Eastern_bet.png"
 import eastern_gamal from "./images/Syriac_Eastern_gamal.png"
+import eastern_dalat from "./images/Syriac_Eastern_dalat.png"
+import eastern_he from "./images/Syriac_Eastern_he.png"
+import eastern_waw from "./images/Syriac_Eastern_waw.png"
 import estrangela_alap from "./images/Syriac_Estrangela_alap.png"
 import estrangela_bet from "./images/Syriac_Estrangela_bet.png"
 import estrangela_gamal from "./images/Syriac_Estrangela_gamal.png"
+import estrangela_dalat from "./images/Syriac_Estrangela_dalat.png"
+import estrangela_he from "./images/Syriac_Estrangela_he.png"
+import estrangela_waw from "./images/Syriac_Estrangela_waw.png"
 import serta_alap from "./images/Syriac_Serta_alap.png"
 import serta_bet from "./images/Syriac_Serta_bet.png"
 import serta_gamal from "./images/Syriac_Serta_gamal.png"
+import serta_dalat from "./images/Syriac_Serta_dalat.png"
+import serta_he from "./images/Syriac_Serta_he.png"
+import serta_waw from "./images/Syriac_Serta_waw.png"
 
 //import sample from "./images/sample-letter.png";
 //import sample2 from "./images/sample-letter2.png";
@@ -53,6 +62,36 @@ const rows = [
     manuscript4: <img src={eastern_gamal} alt={"sample letter"} />, 
     manuscript5: <img src={estrangela_gamal} alt={"sample letter2"} />, 
     manuscript6: <img src={serta_gamal} alt={"sample letter3"} />
+  },
+  {
+    id: 4,
+    letter: "Dālaṯ",
+    manuscript1: <img src={eastern_dalat} alt={"sample letter"} />, 
+    manuscript2: <img src={estrangela_dalat} alt={"sample letter2"} />, 
+    manuscript3: <img src={serta_dalat} alt={"sample letter3"} />,
+    manuscript4: <img src={eastern_dalat} alt={"sample letter"} />, 
+    manuscript5: <img src={estrangela_dalat} alt={"sample letter2"} />, 
+    manuscript6: <img src={serta_dalat} alt={"sample letter3"} />
+  },
+  {
+    id: 5,
+    letter: "Hē",
+    manuscript1: <img src={eastern_he} alt={"sample letter"} />, 
+    manuscript2: <img src={estrangela_he} alt={"sample letter2"} />, 
+    manuscript3: <img src={serta_he} alt={"sample letter3"} />,
+    manuscript4: <img src={eastern_he} alt={"sample letter"} />, 
+    manuscript5: <img src={estrangela_he} alt={"sample letter2"} />, 
+    manuscript6: <img src={serta_he} alt={"sample letter3"} />
+  },
+  {
+    id: 6,
+    letter: "Waw",
+    manuscript1: <img src={eastern_waw} alt={"sample letter"} />, 
+    manuscript2: <img src={estrangela_waw} alt={"sample letter2"} />, 
+    manuscript3: <img src={serta_waw} alt={"sample letter3"} />,
+    manuscript4: <img src={eastern_waw} alt={"sample letter"} />, 
+    manuscript5: <img src={estrangela_waw} alt={"sample letter2"} />, 
+    manuscript6: <img src={serta_waw} alt={"sample letter3"} />
   }
 ];
  

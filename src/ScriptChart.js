@@ -1,12 +1,14 @@
 import React from "react";
 
 import DragAndDropTable from "./DragAndDropTable";
-import sample from "./images/sample-letter.png";
+
+//import sample from "./images/sample-letter.png";
 
 const ScriptChart = () => {
   return (
     <div>
     <DragAndDropTable />
+     {/* 
     <table className={"table is-striped is-hoverable"}>
       <thead>
         <tr>
@@ -70,6 +72,7 @@ const ScriptChart = () => {
         </tr>
       </tbody>
     </table>
+     */}
   </div>
   );
 };

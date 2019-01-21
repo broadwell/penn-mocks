@@ -11,11 +11,12 @@ const ManuscriptForm = () => {
         <div className={"control"}>
           <div className={"select is-multiple"}>
             <select multiple>
-              <option>Manuscript 1</option>
-              <option>Manuscript 2</option>
-              <option>Manuscript 3</option>
-              <option>Manuscript 4</option>
-              <option>Manuscript 5</option>
+              <option>Manuscript A</option>
+              <option>Manuscript B</option>
+              <option>Manuscript C</option>
+              <option>Manuscript D</option>
+              <option>Manuscript E</option>
+              <option>Manuscript F</option>
             </select>
           </div>
         </div>
@@ -36,12 +37,12 @@ const ManuscriptForm = () => {
         <div className={"control"}>
           <div className={"select is-multiple"}>
             <select multiple>
-              <option>Letter 1</option>
-              <option>Letter 2</option>
-              <option>Letter 3</option>
-              <option>Letter 4</option>
-              <option>Letter 5</option>
-              <option>Letter 6</option>
+              <option>ʾĀlep̄</option>
+              <option>Bēṯ</option>
+              <option>Gāmal</option>
+              <option>Dālaṯ</option>
+              <option>Hē</option>
+              <option>Waw</option>
             </select>
           </div>
         </div>
