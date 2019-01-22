@@ -106,7 +106,7 @@ class DragAndDropTable extends React.Component {
           props: {
             label: 'Letter',
             style: {
-              width: 120,
+              width: 140,
               fontWeight: "bold"
             }
           },
@@ -122,7 +122,7 @@ class DragAndDropTable extends React.Component {
           props: {
             label: 'Manuscript A',
             style: {
-              width: 120
+              width: 140
             }
           },
           header: {
@@ -136,7 +136,7 @@ class DragAndDropTable extends React.Component {
           property: 'manuscript2',
           props: {
             style: {
-              width: 120
+              width: 140
             }
           },
           header: {
@@ -151,7 +151,7 @@ class DragAndDropTable extends React.Component {
           property: 'manuscript3',
           props: {
             style: {
-              width: 120
+              width: 140
             }
           },
           header: {
@@ -166,7 +166,7 @@ class DragAndDropTable extends React.Component {
           property: 'manuscript4',
           props: {
             style: {
-              width: 120
+              width: 140
             }
           },
           header: {
@@ -181,7 +181,7 @@ class DragAndDropTable extends React.Component {
           property: 'manuscript5',
           props: {
             style: {
-              width: 120
+              width: 140
             }
           },
           header: {
@@ -196,7 +196,7 @@ class DragAndDropTable extends React.Component {
           property: 'manuscript6',
           props: {
             style: {
-              width: 120
+              width: 140
             }
           },
           header: {

@@ -1,8 +1,25 @@
-table {
+table, th, td {
   color: black;
+  border: 1px solid gray;
 }
 
-tr:hover {
+td img{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+th {
+  padding: 5px;
+  text-align: center;
+}
+
+td {
+  padding: 5px;
+  text-align: left;
+}
+
+td:hover {
   background-color: #bbbbbb;
 }
 
