@@ -1,11 +1,12 @@
 import React from "react";
 // import "./Header.css";
 
-const Header = () => {
-  return (
+class Header extends React.Component {
+  render () {
+    return (
     <nav className={"navbar is-transparent"} role={"navigation"}>
       <div className={"navbar-brand"}>
-        <h1 className={"title is-1"}>
+        <h1 className={"title is-4"}>
           <a className={"navbar-item"} href={"."}>
             Digital Syriac Manuscripts
           </a>
@@ -36,14 +37,18 @@ const Header = () => {
         </div>
         <div className={"navbar-end"}>
           <div className={"navbar-item"}>
-            <a className={"button"} href=".">
-              Script Chart Generator
-            </a>
+            <button className={"button"} onClick={this.props.sidebarToggle}>
+              Show/hide form
+            </button>
+        {/* <a className={"button"} href=".">
+              Script Chart Generator 
+            </a> */}
           </div>
         </div>
       </div>
     </nav>
   );
-};
+}
+}
 
 export default Header;

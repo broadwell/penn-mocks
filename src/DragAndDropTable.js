@@ -31,7 +31,38 @@ import serta_waw from "./images/Syriac_Serta_waw.png"
 //import sample3 from "./images/sample-letter3.png";
 
 import './DragAndDropTable.css';
- 
+/*
+const schema = {
+  type: 'object',
+  properties: {
+    id: {
+      type: 'integer'
+    },
+    letter: {
+      type: 'string'
+    },
+    manuscript1: {
+      type: 'string'    
+    },
+    manuscript2: {
+      type: 'string'    
+    },
+    manuscript3: {
+      type: 'string'    
+    },
+    manuscript4: {
+      type: 'string'    
+    },
+    manuscript5: {
+      type: 'string'    
+    },
+    manuscript6: {
+      type: 'string'    
+    }
+  },
+  required: ['id', 'letter', 'manuscript1', 'manuscript2', 'manuscript3', 'manuscript4', 'manuscript5', 'manuscript6']
+}
+*/
 const rows = [
   {
     id: 1,
@@ -106,7 +137,7 @@ class DragAndDropTable extends React.Component {
           props: {
             label: 'Letter',
             style: {
-              width: 140,
+              width: 120,
               fontWeight: "bold"
             }
           },
@@ -122,7 +153,7 @@ class DragAndDropTable extends React.Component {
           props: {
             label: 'Manuscript A',
             style: {
-              width: 140
+              width: 120
             }
           },
           header: {
@@ -136,7 +167,7 @@ class DragAndDropTable extends React.Component {
           property: 'manuscript2',
           props: {
             style: {
-              width: 140
+              width: 120
             }
           },
           header: {
@@ -151,7 +182,7 @@ class DragAndDropTable extends React.Component {
           property: 'manuscript3',
           props: {
             style: {
-              width: 140
+              width: 120
             }
           },
           header: {
@@ -166,7 +197,7 @@ class DragAndDropTable extends React.Component {
           property: 'manuscript4',
           props: {
             style: {
-              width: 140
+              width: 120
             }
           },
           header: {
@@ -181,7 +212,7 @@ class DragAndDropTable extends React.Component {
           property: 'manuscript5',
           props: {
             style: {
-              width: 140
+              width: 120
             }
           },
           header: {
@@ -196,7 +227,7 @@ class DragAndDropTable extends React.Component {
           property: 'manuscript6',
           props: {
             style: {
-              width: 140
+              width: 120
             }
           },
           header: {

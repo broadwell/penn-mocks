@@ -6,35 +6,58 @@ import "font-awesome/css/font-awesome.min.css";
 import "./main.css";
 
 import Header from "./Header";
-import ManuscriptForm from "./ManuscriptForm";
+
 // import ScriptChart from "./ScriptChart";
 import Footer from "./Footer";
-// import MiradorContainer from "./MiradorContainer";
-import MiradorTabbed from "./MiradorTabbed";
+import DashTabs from "./DashTabs";
 
 import HTML5Backend from 'react-dnd-html5-backend'
 import { DragDropContext } from 'react-dnd'
 
+import ManuscriptForm from "./ManuscriptForm";
+import Sidebar from "react-sidebar";
+
 class App extends Component {
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      sidebarOpen: false,
+      sidebarDocked: true
+    };
+    this.sidebarToggle = this.sidebarToggle.bind(this);
+    this.onSetSidebarOpen = this.onSetSidebarOpen.bind(this);
+  }
+
+  onSetSidebarOpen(open) {
+    this.setState({ sidebarOpen: open });
+  }
+
+  sidebarToggle(docked) {
+    this.setState({ sidebarDocked: !this.state.sidebarDocked });
+  }
+
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <Header />
-        </header>
-        <div className={"columns main-content"}>
-          <div className={"column is-one-quarter"}>
-            <div className={"box"}>
-              <h4 className={"title is-4"}>Scriptchart options</h4>
-              <ManuscriptForm />
-            </div>
-          </div>
-          <div className={"column"}>
-            <MiradorTabbed />
-          </div>
+      <Sidebar
+        sidebar={
+          <div className={"box"}>
+            <h4 className={"title is-4"}>Scriptchart options</h4>
+            <ManuscriptForm />
+          </div>}
+          open={this.state.sidebarOpen}
+          docked={this.state.sidebarDocked}
+          onSetOpen={this.onSetSidebarOpen}
+          styles={{ sidebar: { background: "white", zIndex: 32 } }}
+      >
+      <Header sidebarToggle={this.sidebarToggle} />
+      <section className="hero">
+        <div className="hero-head">
+          <DashTabs />
         </div>
-        <Footer />
-      </div>
+      </section>
+      <Footer />
+      </Sidebar>
     );
   }
 }

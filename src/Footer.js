@@ -2,14 +2,20 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <footer className={"footer"}>
-      <div className={"content has-text-centered"}>
-        <p>
-          Built by the Center for Interdisciplinary Digital Research (CIDR) at
-          Stanford Libraries.
-        </p>
+    <nav className={"navbar is-light is-fixed-bottom"}>
+      <div className={"navbar-brand"}>
       </div>
-    </footer>
+      <div className={"navbar-menu"}>
+        <div className={"navbar-end"}>
+          <div className={"navbar-item"}>
+             <p>
+              Built by the Center for Interdisciplinary Digital Research (CIDR) at
+              Stanford Libraries.
+            </p>  
+          </div>
+        </div>
+      </div>
+    </nav>
   );
 };
 
