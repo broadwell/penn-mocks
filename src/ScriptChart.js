@@ -7,8 +7,8 @@ import DragAndDropTable from "./DragAndDropTable";
 const ScriptChart = () => {
   return (
     <div>
-    <DragAndDropTable />
-     {/* 
+      <DragAndDropTable />
+      {/* PMB: Replaced by DnD table content
     <table className={"table is-striped is-hoverable"}>
       <thead>
         <tr>
@@ -73,7 +73,7 @@ const ScriptChart = () => {
       </tbody>
     </table>
      */}
-  </div>
+    </div>
   );
 };
 

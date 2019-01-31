@@ -11,14 +11,13 @@ import Header from "./Header";
 import Footer from "./Footer";
 import DashTabs from "./DashTabs";
 
-import HTML5Backend from 'react-dnd-html5-backend'
-import { DragDropContext } from 'react-dnd'
+import HTML5Backend from "react-dnd-html5-backend";
+import { DragDropContext } from "react-dnd";
 
 import ManuscriptForm from "./ManuscriptForm";
 import Sidebar from "react-sidebar";
 
 class App extends Component {
-
   constructor(props) {
     super(props);
     this.state = {
@@ -39,25 +38,24 @@ class App extends Component {
 
   render() {
     return (
-      <Sidebar
-        sidebar={
-          <div className={"box"}>
-            <h4 className={"title is-4"}>Scriptchart options</h4>
-            <ManuscriptForm />
-          </div>}
+      <div>
+        <Header sidebarToggle={this.sidebarToggle} />
+        <Sidebar
+          sidebar={
+            <div className={"box"}>
+              <h4 className={"title is-4"}>Scriptchart options</h4>
+              <ManuscriptForm />
+            </div>
+          }
           open={this.state.sidebarOpen}
           docked={this.state.sidebarDocked}
           onSetOpen={this.onSetSidebarOpen}
-          styles={{ sidebar: { background: "white", zIndex: 32 } }}
-      >
-      <Header sidebarToggle={this.sidebarToggle} />
-      <section className="hero">
-        <div className="hero-head">
+          styles={{ sidebar: { background: "white" } }}
+        >
           <DashTabs />
-        </div>
-      </section>
-      <Footer />
-      </Sidebar>
+        </Sidebar>
+        <Footer />
+      </div>
     );
   }
 }

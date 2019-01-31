@@ -1,37 +1,37 @@
-import React from 'react';
+import React from "react";
 //import { DragDropContext } from 'react-dnd';
 //import HTML5Backend from 'react-dnd-html5-backend';
-import cloneDeep from 'lodash/cloneDeep';
+import cloneDeep from "lodash/cloneDeep";
 //import findIndex from 'lodash/findIndex';
-import * as Table from 'reactabular-table';
-import * as dnd from 'reactabular-dnd';
-import * as resolve from 'table-resolver';
+import * as Table from "reactabular-table";
+import * as dnd from "reactabular-dnd";
+import * as resolve from "table-resolver";
 
-import eastern_alap from "./images/Syriac_Eastern_alap.png"
-import eastern_bet from "./images/Syriac_Eastern_bet.png"
-import eastern_gamal from "./images/Syriac_Eastern_gamal.png"
-import eastern_dalat from "./images/Syriac_Eastern_dalat.png"
-import eastern_he from "./images/Syriac_Eastern_he.png"
-import eastern_waw from "./images/Syriac_Eastern_waw.png"
-import estrangela_alap from "./images/Syriac_Estrangela_alap.png"
-import estrangela_bet from "./images/Syriac_Estrangela_bet.png"
-import estrangela_gamal from "./images/Syriac_Estrangela_gamal.png"
-import estrangela_dalat from "./images/Syriac_Estrangela_dalat.png"
-import estrangela_he from "./images/Syriac_Estrangela_he.png"
-import estrangela_waw from "./images/Syriac_Estrangela_waw.png"
-import serta_alap from "./images/Syriac_Serta_alap.png"
-import serta_bet from "./images/Syriac_Serta_bet.png"
-import serta_gamal from "./images/Syriac_Serta_gamal.png"
-import serta_dalat from "./images/Syriac_Serta_dalat.png"
-import serta_he from "./images/Syriac_Serta_he.png"
-import serta_waw from "./images/Syriac_Serta_waw.png"
+import eastern_alap from "./images/Syriac_Eastern_alap.png";
+import eastern_bet from "./images/Syriac_Eastern_bet.png";
+import eastern_gamal from "./images/Syriac_Eastern_gamal.png";
+import eastern_dalat from "./images/Syriac_Eastern_dalat.png";
+import eastern_he from "./images/Syriac_Eastern_he.png";
+import eastern_waw from "./images/Syriac_Eastern_waw.png";
+import estrangela_alap from "./images/Syriac_Estrangela_alap.png";
+import estrangela_bet from "./images/Syriac_Estrangela_bet.png";
+import estrangela_gamal from "./images/Syriac_Estrangela_gamal.png";
+import estrangela_dalat from "./images/Syriac_Estrangela_dalat.png";
+import estrangela_he from "./images/Syriac_Estrangela_he.png";
+import estrangela_waw from "./images/Syriac_Estrangela_waw.png";
+import serta_alap from "./images/Syriac_Serta_alap.png";
+import serta_bet from "./images/Syriac_Serta_bet.png";
+import serta_gamal from "./images/Syriac_Serta_gamal.png";
+import serta_dalat from "./images/Syriac_Serta_dalat.png";
+import serta_he from "./images/Syriac_Serta_he.png";
+import serta_waw from "./images/Syriac_Serta_waw.png";
 
 //import sample from "./images/sample-letter.png";
 //import sample2 from "./images/sample-letter2.png";
 //import sample3 from "./images/sample-letter3.png";
 
-import './DragAndDropTable.css';
-/*
+import "./DragAndDropTable.css";
+/* PMB These should come in handy when the content is pulled in dynamically
 const schema = {
   type: 'object',
   properties: {
@@ -63,177 +63,68 @@ const schema = {
   required: ['id', 'letter', 'manuscript1', 'manuscript2', 'manuscript3', 'manuscript4', 'manuscript5', 'manuscript6']
 }
 */
-const rows = [
-  {
-    id: 1,
-    letter: "ʾĀlep̄",
-    manuscript1: <img src={eastern_alap} alt={"sample letter"} />, 
-    manuscript2: <img src={estrangela_alap} alt={"sample letter2"} />, 
-    manuscript3: <img src={serta_alap} alt={"sample letter3"} />,
-    manuscript4: <img src={eastern_alap} alt={"sample letter"} />, 
-    manuscript5: <img src={estrangela_alap} alt={"sample letter2"} />, 
-    manuscript6: <img src={serta_alap} alt={"sample letter3"} />
-  },
-  {
-    id: 2,
-    letter: "Bēṯ",
-    manuscript1: <img src={eastern_bet} alt={"sample letter"} />, 
-    manuscript2: <img src={estrangela_bet} alt={"sample letter2"} />, 
-    manuscript3: <img src={serta_bet} alt={"sample letter3"} />,
-    manuscript4: <img src={eastern_bet} alt={"sample letter"} />, 
-    manuscript5: <img src={estrangela_bet} alt={"sample letter2"} />, 
-    manuscript6: <img src={serta_bet} alt={"sample letter3"} />
-  },
-  {
-    id: 3,
-    letter: "Gāmal",
-    manuscript1: <img src={eastern_gamal} alt={"sample letter"} />, 
-    manuscript2: <img src={estrangela_gamal} alt={"sample letter2"} />, 
-    manuscript3: <img src={serta_gamal} alt={"sample letter3"} />,
-    manuscript4: <img src={eastern_gamal} alt={"sample letter"} />, 
-    manuscript5: <img src={estrangela_gamal} alt={"sample letter2"} />, 
-    manuscript6: <img src={serta_gamal} alt={"sample letter3"} />
-  },
-  {
-    id: 4,
-    letter: "Dālaṯ",
-    manuscript1: <img src={eastern_dalat} alt={"sample letter"} />, 
-    manuscript2: <img src={estrangela_dalat} alt={"sample letter2"} />, 
-    manuscript3: <img src={serta_dalat} alt={"sample letter3"} />,
-    manuscript4: <img src={eastern_dalat} alt={"sample letter"} />, 
-    manuscript5: <img src={estrangela_dalat} alt={"sample letter2"} />, 
-    manuscript6: <img src={serta_dalat} alt={"sample letter3"} />
-  },
-  {
-    id: 5,
-    letter: "Hē",
-    manuscript1: <img src={eastern_he} alt={"sample letter"} />, 
-    manuscript2: <img src={estrangela_he} alt={"sample letter2"} />, 
-    manuscript3: <img src={serta_he} alt={"sample letter3"} />,
-    manuscript4: <img src={eastern_he} alt={"sample letter"} />, 
-    manuscript5: <img src={estrangela_he} alt={"sample letter2"} />, 
-    manuscript6: <img src={serta_he} alt={"sample letter3"} />
-  },
-  {
-    id: 6,
-    letter: "Waw",
-    manuscript1: <img src={eastern_waw} alt={"sample letter"} />, 
-    manuscript2: <img src={estrangela_waw} alt={"sample letter2"} />, 
-    manuscript3: <img src={serta_waw} alt={"sample letter3"} />,
-    manuscript4: <img src={eastern_waw} alt={"sample letter"} />, 
-    manuscript5: <img src={estrangela_waw} alt={"sample letter2"} />, 
-    manuscript6: <img src={serta_waw} alt={"sample letter3"} />
-  }
+
+const sampleLetters = [
+  eastern_alap,
+  eastern_bet,
+  eastern_gamal,
+  eastern_dalat,
+  eastern_he,
+  eastern_waw,
+  estrangela_alap,
+  estrangela_bet,
+  estrangela_gamal,
+  estrangela_dalat,
+  estrangela_he,
+  estrangela_waw,
+  serta_alap,
+  serta_bet,
+  serta_gamal,
+  serta_dalat,
+  serta_he,
+  serta_waw
 ];
- 
+
+const letters = ["ʾĀlep̄", "Bēṯ", "Gāmal", "Dālaṯ", "Hē", "Waw"];
+const manuscripts = ["A", "B", "C", "D", "E", "F"];
+var rows = [];
+let sampleLetterCount = 0;
+
+/* Load the sample letter images into the rows array */
+for (let i = 0; i < letters.length; i++) {
+  let row = { id: i + 1, letter: letters[i] };
+
+  for (let j = 0; j < manuscripts.length; j++) {
+    sampleLetterCount++;
+    let sampleLetterIndex = sampleLetterCount % sampleLetters.length;
+    row["manuscript" + (j + 1)] = (
+      <img
+        src={sampleLetters[sampleLetterIndex]}
+        alt={"letter " + sampleLetterIndex}
+      />
+    );
+  }
+
+  rows.push(row);
+}
+
 class DragAndDropTable extends React.Component {
   constructor(props) {
     super(props);
- 
+
     this.state = {
       columns: [
         {
-          property: 'letter',
+          property: "letter",
           props: {
-            label: 'Letter',
+            label: "Letter",
             style: {
-              width: 120,
               fontWeight: "bold"
             }
           },
           header: {
-            label: 'Scriptchart',
+            label: "Scriptchart",
             props: {
-              onMove: o => this.onMoveColumn(o)
-            }
-          }
-        },
-        {
-          property: 'manuscript1',
-          props: {
-            label: 'Manuscript A',
-            style: {
-              width: 120
-            }
-          },
-          header: {
-            label: 'Manuscript A',
-            props: {
-              onMove: o => this.onMoveColumn(o)
-            }
-          }
-        },
-        {
-          property: 'manuscript2',
-          props: {
-            style: {
-              width: 120
-            }
-          },
-          header: {
-            label: 'Manuscript B',
-            props: {
-              label: 'Manuscript B',
-              onMove: o => this.onMoveColumn(o)
-            }
-          }
-        },
-        {
-          property: 'manuscript3',
-          props: {
-            style: {
-              width: 120
-            }
-          },
-          header: {
-            label: 'Manuscript C',
-            props: {
-              label: 'Manuscript C',
-              onMove: o => this.onMoveColumn(o)
-            }
-          }
-        },
-        {
-          property: 'manuscript4',
-          props: {
-            style: {
-              width: 120
-            }
-          },
-          header: {
-            label: 'Manuscript D', 
-            props: {
-              label: 'Manuscript D',
-              onMove: o => this.onMoveColumn(o)
-            }
-          }
-        },
-        {
-          property: 'manuscript5',
-          props: {
-            style: {
-              width: 120
-            }
-          },
-          header: {
-            label: 'Manuscript E',
-            props: {
-              label: 'Manuscript E',
-              onMove: o => this.onMoveColumn(o)
-            }
-          }
-        },
-        {
-          property: 'manuscript6',
-          props: {
-            style: {
-              width: 120
-            }
-          },
-          header: {
-            label: 'Manuscript F',
-            props: {
-              label: 'Manuscript F',
               onMove: o => this.onMoveColumn(o)
             }
           }
@@ -241,12 +132,29 @@ class DragAndDropTable extends React.Component {
       ],
       rows
     };
- 
+
+    for (let i = 0; i < manuscripts.length; i++) {
+      let column = {
+        property: "manuscript" + (i + 1),
+        header: {
+          label: "Manuscript " + manuscripts[i],
+          props: {
+            onMove: o => this.onMoveColumn(o)
+          }
+        },
+        props: {
+          label: "Manuscript " + manuscripts[i]
+        }
+      };
+      this.state.columns.push(column);
+    }
+
     this.onRow = this.onRow.bind(this);
     this.onMoveRow = this.onMoveRow.bind(this);
     this.onMoveColumn = this.onMoveColumn.bind(this);
     this.onMoveChildColumn = this.onMoveChildColumn.bind(this);
   }
+
   render() {
     const renderers = {
       header: {
@@ -262,21 +170,12 @@ class DragAndDropTable extends React.Component {
       columns: resolvedColumns,
       method: resolve.nested
     })(rows);
- 
+
     return (
-      <Table.Provider
-        renderers={renderers}
-        columns={resolvedColumns}
-      >
-        <Table.Header
-          headerRows={resolve.headerRows({ columns })}
-        />
- 
-        <Table.Body
-          rows={resolvedRows}
-          rowKey="id"
-          onRow={this.onRow}
-        />
+      <Table.Provider renderers={renderers} columns={resolvedColumns}>
+        <Table.Header headerRows={resolve.headerRows({ columns })} />
+
+        <Table.Body rows={resolvedRows} rowKey="id" onRow={this.onRow} />
       </Table.Provider>
     );
   }
@@ -291,21 +190,21 @@ class DragAndDropTable extends React.Component {
       sourceRowId,
       targetRowId
     })(this.state.rows);
- 
+
     if (rows) {
       this.setState({ rows });
     }
   }
   onMoveColumn(labels) {
     const movedColumns = dnd.moveLabels(this.state.columns, labels);
- 
+
     if (movedColumns) {
       // Retain widths to avoid flashing while drag and dropping.
       const source = movedColumns.source;
       const target = movedColumns.target;
       const sourceWidth = source.props.style && source.props.style.width;
       const targetWidth = target.props.style && target.props.style.width;
- 
+
       source.props.style = {
         ...source.props.style,
         width: targetWidth
@@ -314,7 +213,7 @@ class DragAndDropTable extends React.Component {
         ...target.props.style,
         width: sourceWidth
       };
- 
+
       this.setState({
         columns: movedColumns.columns
       });
@@ -322,20 +221,16 @@ class DragAndDropTable extends React.Component {
   }
   onMoveChildColumn(labels) {
     const movedChildren = dnd.moveChildrenLabels(this.state.columns, labels);
- 
+
     if (movedChildren) {
       const columns = cloneDeep(this.state.columns);
- 
+
       columns[movedChildren.target].children = movedChildren.columns;
- 
+
       // Here we assume children have the same width.
       this.setState({ columns });
     }
   }
 }
- 
-// Set up drag and drop context
-//const DragAndDrop = DragDropContext(HTML5Backend)(DragAndDropTable);
-//<DragAndDropTable />
 
 export default DragAndDropTable;
